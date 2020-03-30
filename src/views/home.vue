@@ -1,0 +1,100 @@
+/*
+* @Author: wanghao
+* @Date: 2020-03-27 15:25:55
+ * @Last Modified by: wanghao
+ * @Last Modified time: 2020-03-30 17:25:38
+*/
+<!-- home -->
+<template>
+    <div class='home'>
+        <div class="main">
+            <router-view></router-view>
+        </div>
+        <!-- 菜单项 -->
+        <van-tabbar v-model="tabActiveIndex" @change="onChange">
+            <van-tabbar-item icon="home-o" v-for="(v,i) in tabList" :key="i" @click="goToPage(v.pathName)">
+                <span>{{v.name}}</span>
+                <template #icon="props">
+                    <img :src="props.active ? v.activeIcon : v.unactiveIcon" />
+                </template>
+            </van-tabbar-item>
+        </van-tabbar>
+    </div>
+</template>
+
+<script>
+    
+    export default {
+        name: 'home',
+        data() {
+            return {
+                tabActiveIndex: 0,
+                tabList: [{
+                        pathName: "aaa",
+                        name: "首页",
+                        activeIcon: 'https://img.yzcdn.cn/vant/user-active.png',
+                        unactiveIcon: "https://img.yzcdn.cn/vant/user-inactive.png"
+                    },
+                    {
+                        pathName: "bbb",
+                        name: "商城",
+                        activeIcon: 'https://img.yzcdn.cn/vant/user-active.png',
+                        unactiveIcon: "https://img.yzcdn.cn/vant/user-inactive.png"
+                    },
+                    {
+                        pathName: "market-category",
+                        name: "品牌",
+                        activeIcon: 'https://img.yzcdn.cn/vant/user-active.png',
+                        unactiveIcon: "https://img.yzcdn.cn/vant/user-inactive.png"
+                    },
+                    {
+                        pathName: "mine",
+                        name: "我的",
+                        activeIcon: 'https://img.yzcdn.cn/vant/user-active.png',
+                        unactiveIcon: "https://img.yzcdn.cn/vant/user-inactive.png"
+                    }
+                ]
+            }
+        },
+        created() {
+            /**
+             * 处理刷新页面, tabActiveIndex 与页面不对应问题
+             */
+            const targetName = this.$route.name;
+            this.tabList.forEach((item, index) => {
+                if (item.pathName == targetName) {
+                    this.tabActiveIndex = index;
+                }
+            });
+        },
+        watch: {
+            $route(to, from) {
+                /**
+                 * 处理刷新页面, tabActiveIndex 与页面不对应问题
+                 */
+                const targetName = this.$route.name;
+                this.tabList.forEach((item, index) => {
+                    if (item.pathName == targetName) {
+                        this.tabActiveIndex = index;
+                    }
+                });
+            }
+        },
+        methods: {
+            // 切换菜单tab
+            onChange(index) {
+                this.$notify({
+                    type: 'primary',
+                    message: index
+                });
+            }
+        }
+    }
+</script>
+<style lang='less' scoped>
+    .home {
+        .main {
+            padding-bottom: 60px;
+        }
+    }
+</style>

@@ -1,0 +1,169 @@
+/*
+ * @Author: wanghao 
+ * @Date: 2020-03-27 16:04:03 
+ * @Last Modified by: wanghao
+ * @Last Modified time: 2020-03-30 17:50:36
+ */
+/**
+** 初始化全局样式
+*/
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    color: #000;
+    /*规定主色调,依据业务场景(非必须)*/
+    background: #fff;
+    /*规定主背景,依据业务场景(非必须)*/
+    overflow-y: auto;
+    /*如果有溢出自动形成滚动条*/
+    -webkit-text-size-adjust: 100%;
+    /*不想让iPhone横坚屏切换的时候调节文字*/
+    -ms-text-size-adjust: 100%;
+    position: relative;
+}
+
+html *{
+    /*所有元素*/
+    outline: none;
+    font-family: "Microsoft Yahei", "微软雅黑", Tahoma, Arial, Helvetica, STHeiti;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    /*去除移动端开发点击事件灰色背景如a标签*/
+    scroll-behavior: smooth;
+    /* 平滑滚动 */
+    -webkit-overflow-scrolling: touch;
+    user-select: none; /*用户是否能够选中文本*/
+    box-sizing: border-box;
+}
+
+ol,
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+/*flex box*/
+.flex {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.flex-wrap {
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+.row-reverse {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+    -ms-flex-direction: row-reverse;
+    flex-direction: row-reverse;
+}
+
+.row {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+}
+
+.flex-vertical {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+
+.justify-between {
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+
+.justify-around {
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+}
+
+.justify-center {
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+.justify-end {
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+}
+
+.align-center {
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.column {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+
+.ellipsis-row-1 {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.ellipsis-row-2 {
+    word-break: break-all;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+
+/**
+** transition
+*/
+
+.fade-enter-active, .fade-leave-active {
+    transition: opacity .5s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+opacity: 0;
+}
+
+  
+.qwe{
+    border:1px solid red;
+}
+
+.qwee{
+    border:1px solid green;
+}
+
+// vant 骨架图高度
+.van-skeleton__title{
+    height: 100px;
+}
+.van-skeleton__content{
+      .van-skeleton__row{
+        height: 50px;
+        border-top-right-radius: 3px;
+        border-bottom-right-radius: 3px;
+    }
+}

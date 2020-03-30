@@ -1,28 +1,49 @@
+/*
+* @Author: wanghao
+* @Date: 2020-03-27 15:26:01
+ * @Last Modified by: wanghao
+ * @Last Modified time: 2020-03-30 17:09:12
+*/
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div id='app'>
+    <!-- <transition :name="'fade'"> -->
+      <keep-alive>
+        <router-view v-if="$route.meta.keepAlive" />
+      </keep-alive>
+    <!-- </transition> -->
+    <!-- <transition :name="'fade'"> -->
+      <router-view v-if="!$route.meta.keepAlive" />
+    <!-- </transition> -->
+ 
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+  export default {
+    name: 'app',
+    data() {
+      return {
 
-export default {
-  name: 'App',
-  components: {
-    HelloWorld
+      }
+    },
+    created() {
+
+    },
+    methods: {
+
+    },
+    // beforeRouteLeave (to, from, next) {
+    //   if (to.path === '/goods-detail') {
+    //     console.log(114141414)
+    //     from.meta.keepAlive = true;
+    //   } else {
+    //     console.log(1212122)
+    //     from.meta.keepAlive = false;
+    //     this.$destroy()
+    //   }
+    //   next()
+    // },
   }
-}
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<style lang='less' scoped>
 </style>
