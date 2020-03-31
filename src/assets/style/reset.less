@@ -2,7 +2,7 @@
  * @Author: wanghao 
  * @Date: 2020-03-27 16:04:03 
  * @Last Modified by: wanghao
- * @Last Modified time: 2020-03-30 17:50:36
+ * @Last Modified time: 2020-03-31 13:39:39
  */
 /**
 ** 初始化全局样式
@@ -20,6 +20,7 @@ html {
     color: #000;
     /*规定主色调,依据业务场景(非必须)*/
     background: #fff;
+    background: #f6f6f6;
     /*规定主背景,依据业务场景(非必须)*/
     overflow-y: auto;
     /*如果有溢出自动形成滚动条*/
@@ -136,18 +137,44 @@ a {
     -webkit-line-clamp: 2;
 }
 
-/**
-** transition
-*/
 
-.fade-enter-active, .fade-leave-active {
-    transition: opacity .5s;
-}
-.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
-opacity: 0;
+.margin-10{
+    margin: 10px 0;
+ } 
+
+ .margin-top-10{
+    margin-top: 10px;
+ } 
+ 
+ .margin-bottom-10{
+    margin-bottom: 10px;
+ } 
+
+.margin-20{
+    margin: 20px 0;
+ } 
+
+ .margin-top-20{
+    margin-top: 20px;
+ } 
+ 
+ .margin-bottom-20{
+    margin-bottom: 20px;
+ } 
+ 
+ .padding-5{
+    padding: 5px;
 }
 
-  
+.padding-10{
+    padding: 10px;
+}
+
+.border-radius-50{
+    border-radius: 50%;
+    overflow: hidden;
+    border: 1px solid #f6f6f6;
+}
 .qwe{
     border:1px solid red;
 }
@@ -166,4 +193,29 @@ opacity: 0;
         border-top-right-radius: 3px;
         border-bottom-right-radius: 3px;
     }
+}
+
+/**
+** transition
+*/
+
+.fade-enter-active, .fade-leave-active {
+    transition: opacity .5s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+    opacity: 0;
+}
+
+.slide-left-enter,
+ .slide-right-leave-active {
+    opacity: 0;
+    -webkit-transform: translate(100%, 0);
+    transform: translate(100%, 0);
+}
+
+.slide-left-leave-active,
+.slide-right-enter {
+    opacity: 0;
+    -webkit-transform: translate(-100%, 0);
+    transform: translate(-100% 0);
 }

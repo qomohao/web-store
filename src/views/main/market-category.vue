@@ -2,7 +2,7 @@
 * @Author: wanghao
 * @Date: 2020-03-30 17:21:32
  * @Last Modified by: wanghao
- * @Last Modified time: 2020-03-30 18:33:40
+ * @Last Modified time: 2020-03-31 10:59:41
 */
 <!-- 品牌、分类 -->
 <template>
@@ -22,7 +22,7 @@
              </van-sidebar>
         </div>
         <div class="category-right flex justify-between flex-wrap">
-           <div class="item" v-for="n in 28" :key="n">
+           <div class="item" v-for="n in 28" :key="n" @click="goToPage('goods-detail')">
                <van-image
                     width="100%"
                     height="60px"
@@ -83,9 +83,9 @@
             }
         }
           .van-sidebar-item--select{
-            border-color:transparent;
-            font-size:16px;
-            transition: .3s;
+            // border-color:transparent;
+            // font-size:16px;
+            // transition: .3s;
         }
     }
     

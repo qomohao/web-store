@@ -2,7 +2,7 @@
 * @Author: wanghao
 * @Date: 2020-03-27 15:25:55
  * @Last Modified by: wanghao
- * @Last Modified time: 2020-03-30 17:25:38
+ * @Last Modified time: 2020-03-31 13:50:44
 */
 <!-- home -->
 <template>
@@ -12,7 +12,7 @@
         </div>
         <!-- 菜单项 -->
         <van-tabbar v-model="tabActiveIndex" @change="onChange">
-            <van-tabbar-item icon="home-o" v-for="(v,i) in tabList" :key="i" @click="goToPage(v.pathName)">
+            <van-tabbar-item icon="home-o" v-for="(v,i) in tabList" :key="i" @click="goReplacePage(v.pathName)">
                 <span>{{v.name}}</span>
                 <template #icon="props">
                     <img :src="props.active ? v.activeIcon : v.unactiveIcon" />
@@ -37,7 +37,7 @@
                     },
                     {
                         pathName: "bbb",
-                        name: "商城",
+                        name: "优品",
                         activeIcon: 'https://img.yzcdn.cn/vant/user-active.png',
                         unactiveIcon: "https://img.yzcdn.cn/vant/user-inactive.png"
                     },
@@ -53,7 +53,8 @@
                         activeIcon: 'https://img.yzcdn.cn/vant/user-active.png',
                         unactiveIcon: "https://img.yzcdn.cn/vant/user-inactive.png"
                     }
-                ]
+                ],
+                isBack:this.$router.isBack
             }
         },
         created() {
@@ -80,13 +81,19 @@
                 });
             }
         },
+        
         methods: {
             // 切换菜单tab
             onChange(index) {
-                this.$notify({
-                    type: 'primary',
-                    message: index
-                });
+                // this.$notify({
+                //     type: 'primary',
+                //     message: index
+                // });
+            },
+            goReplacePage(pathName){
+                this.$router.replace({
+                    path:pathName
+                })
             }
         }
     }

@@ -2,7 +2,7 @@
  * @Author: wanghao 
  * @Date: 2020-03-27 15:24:31 
  * @Last Modified by: wanghao
- * @Last Modified time: 2020-03-30 14:57:11
+ * @Last Modified time: 2020-03-31 11:44:36
  */
 import Vue from 'vue'
 import VueRouter from 'vue-router'
@@ -15,6 +15,7 @@ const routerPush = VueRouter.prototype.push
 VueRouter.prototype.push = function push(location) {
     return routerPush.call(this, location).catch(error=> error)
 }
+
 import NProgress from 'nprogress'
 import 'nprogress/nprogress.css'
 
@@ -34,9 +35,9 @@ const router = new VueRouter({
     ),
     // 页面滚动行为
     scrollBehavior (to, from, savedPosition) {
-        console.log(from)
-        console.log(to)
-        console.log(savedPosition)
+        // console.log(from)
+        // console.log(to)
+        // console.log(savedPosition)
         if (savedPosition) {
             return savedPosition
         } else {
