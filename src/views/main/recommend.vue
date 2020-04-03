@@ -2,11 +2,11 @@
 * @Author: wanghao
 * @Date: 2020-03-27 15:25:44
  * @Last Modified by: wanghao
- * @Last Modified time: 2020-03-31 13:54:14
+ * @Last Modified time: 2020-04-03 16:56:38
 */
-<!-- bbb -->
+<!-- 商城模板 -->
 <template>
-    <div class='bbb'>
+    <div class='recommend'>
         <div class="main">
             <van-pull-refresh v-model="refreshLoading" @refresh="onRefresh"   success-text="刷新成功！" :success-duration="1000" :animation-duration="500">
                 <van-list v-model="loadingFlag" :finished="finishedFlag"  loading-text="努力加载中~" :error.sync="errorFlag"
@@ -36,7 +36,7 @@
         $getGoodsList
     } from "@/api/market/home"
     export default {
-        name: 'bbb',
+        name: 'recommend',
         data() {
             return {
                 // 上拉刷新
@@ -57,10 +57,10 @@
             
         },
         activated(){
-            console.log("activated  bbb")
+            console.log("activated  recommend")
         },
         deactivated() {
-            console.log("deactivated bbb")
+            console.log("deactivated recommend")
         },
         methods: {
             // 上拉刷新
@@ -112,7 +112,7 @@
     }
 </script>
 <style lang='less' scoped>
-    .bbb {
+    .recommend {
         .main {
             .goods-list {
                 padding: 0 5px;

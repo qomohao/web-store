@@ -2,7 +2,7 @@
  * @Author: wanghao 
  * @Date: 2020-03-27 15:26:06 
  * @Last Modified by: wanghao
- * @Last Modified time: 2020-03-30 11:49:40
+ * @Last Modified time: 2020-04-03 15:38:39
  */
 import Vue from 'vue';
 import App from './App.vue';
@@ -12,7 +12,10 @@ Vue.config.productionTip = false;
  * 引入公用方法
  */
 import '@/libs/mixin';
-
+/**
+ * 注册全局组件
+ */
+import '@/components/index';
 /**
  * Vant CSS组件库
  */

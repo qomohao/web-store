@@ -2,7 +2,7 @@
  * @Author: wanghao 
  * @Date: 2020-03-27 15:25:49 
  * @Last Modified by: wanghao
- * @Last Modified time: 2020-03-31 13:48:46
+ * @Last Modified time: 2020-04-03 15:26:53
  */
 <!-- mine -->
 <template>
@@ -12,8 +12,8 @@
             <div class="flex justify-between align-center">
                 <van-image class="border-radius-50" width="60px" height="60px" fit="cover" :src="src"></van-image>
                 <div class="info">
-                    <div class="ellipsis-row-1">姓名</div>
-                    <div class="ellipsis-row-1">金币</div>
+                    <div class="ellipsis-row-1">姓名：张三</div>
+                    <div class="ellipsis-row-1">金币：9999999</div>
                     <div class="ellipsis-row-1">其他信息</div>
                 </div>
                 <!-- <div class="info">

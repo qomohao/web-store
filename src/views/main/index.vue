@@ -2,13 +2,13 @@
 * @Author: wanghao
 * @Date: 2020-03-30 18:03:26
  * @Last Modified by: wanghao
- * @Last Modified time: 2020-03-31 13:28:57
+ * @Last Modified time: 2020-04-03 16:56:22
 */
 <!-- 首页 -->
 <template>
-    <div class='aaa'>
+    <div class='index'>
         <!-- 顶部导航栏 -->
-        <div class="home-nav  flex justify-between align-center  ">
+        <div class="home-nav  flex justify-between align-center">
             <div class="tabs flex justify-between align-center">
                 <div>推荐</div>
                 <div>
@@ -19,7 +19,7 @@
                 <div>
                     <van-icon name="search" />
                 </div>
-                <div>
+                <div @click="goToPage('message-center')">
                     <van-icon name="chat-o" dot />
                 </div>
             </div>
@@ -90,7 +90,7 @@
 
 <script>
     export default {
-        name: 'aaa',
+        name: 'index',
         data() {
             return {
                 src: "https://img.yzcdn.cn/vant/apple-1.jpg",
@@ -100,10 +100,10 @@
                     'https://img.yzcdn.cn/vant/apple-2.jpg',
                     'https://img.yzcdn.cn/vant/apple-2.jpg',
                     'https://img.yzcdn.cn/vant/apple-2.jpg',
-                    'https://img.yzcdn.cn/vant/apple-2.jpg', 'https://img.yzcdn.cn/vant/apple-2.jpg',
+                    'https://img.yzcdn.cn/vant/apple-2.jpg', 
                     'https://img.yzcdn.cn/vant/apple-2.jpg',
                     'https://img.yzcdn.cn/vant/apple-2.jpg',
-
+                    'https://img.yzcdn.cn/vant/apple-2.jpg',
                 ],
                 // 内容通知
                 notice: "通知内容11111111,333333通知内容,222222通知内容"
@@ -118,7 +118,7 @@
     }
 </script>
 <style lang='less' scoped>
-    .aaa {
+    .index {
         padding-top:35px;
         >div {
             background: #fff;

@@ -2,7 +2,7 @@
 * @Author: wanghao
 * @Date: 2020-03-27 15:25:55
  * @Last Modified by: wanghao
- * @Last Modified time: 2020-03-31 13:50:44
+ * @Last Modified time: 2020-04-03 17:14:23
 */
 <!-- home -->
 <template>
@@ -30,20 +30,26 @@
             return {
                 tabActiveIndex: 0,
                 tabList: [{
-                        pathName: "aaa",
+                        pathName: "index",
                         name: "首页",
                         activeIcon: 'https://img.yzcdn.cn/vant/user-active.png',
                         unactiveIcon: "https://img.yzcdn.cn/vant/user-inactive.png"
                     },
                     {
-                        pathName: "bbb",
-                        name: "优品",
+                        pathName: "recommend",
+                        name: "推荐",
                         activeIcon: 'https://img.yzcdn.cn/vant/user-active.png',
                         unactiveIcon: "https://img.yzcdn.cn/vant/user-inactive.png"
                     },
                     {
                         pathName: "market-category",
                         name: "品牌",
+                        activeIcon: 'https://img.yzcdn.cn/vant/user-active.png',
+                        unactiveIcon: "https://img.yzcdn.cn/vant/user-inactive.png"
+                    },
+                    {
+                        pathName: "shop-car",
+                        name: "购物车",
                         activeIcon: 'https://img.yzcdn.cn/vant/user-active.png',
                         unactiveIcon: "https://img.yzcdn.cn/vant/user-inactive.png"
                     },

@@ -2,12 +2,10 @@
  * @Author: wanghao 
  * @Date: 2020-03-27 15:24:31 
  * @Last Modified by: wanghao
- * @Last Modified time: 2020-03-31 11:44:36
+ * @Last Modified time: 2020-04-03 17:01:21
  */
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-
-Vue.use(VueRouter);
 /**
  * 重写路由的push方法 ，解除重复点击报错
  */
@@ -15,6 +13,8 @@ const routerPush = VueRouter.prototype.push
 VueRouter.prototype.push = function push(location) {
     return routerPush.call(this, location).catch(error=> error)
 }
+
+Vue.use(VueRouter);
 
 import NProgress from 'nprogress'
 import 'nprogress/nprogress.css'

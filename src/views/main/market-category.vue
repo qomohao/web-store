@@ -2,7 +2,7 @@
 * @Author: wanghao
 * @Date: 2020-03-30 17:21:32
  * @Last Modified by: wanghao
- * @Last Modified time: 2020-03-31 10:59:41
+ * @Last Modified time: 2020-03-31 17:39:42
 */
 <!-- 品牌、分类 -->
 <template>
@@ -49,7 +49,7 @@
         },
         methods: {
             onChange(index) {
-                this.$notify({ type: 'primary', message: index });
+                // this.$notify({ type: 'primary', message: index });
             }
         }
     }
@@ -61,14 +61,22 @@
         .category-left{
             height: 100%;
             overflow-y: scroll;
-            width: 30%;
+            width: 28%;
             .van-sidebar{
                 width: 100%;
+            }
+            .van-sidebar-item{
+                border-bottom: 1px solid #f2f2f2;
+                // padding:16px 5px 16px 10px;
+            }
+           /deep/ .van-sidebar-item__text{
+                color: #737373;
             }
         }
         .category-right{
             height: 100%;
             width: 70%;
+            background: #fff;
             overflow-y: scroll;
             padding: 10px 5px 10px 10px ;
             .item{
@@ -83,9 +91,9 @@
             }
         }
           .van-sidebar-item--select{
-            // border-color:transparent;
-            // font-size:16px;
-            // transition: .3s;
+            color: #666;
+            font-size:16px;
+            transition: .3s;
         }
     }
     
