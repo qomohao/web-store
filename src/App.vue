@@ -2,7 +2,7 @@
 * @Author: wanghao
 * @Date: 2020-03-27 15:26:01
  * @Last Modified by: wanghao
- * @Last Modified time: 2020-03-31 11:32:27
+ * @Last Modified time: 2020-04-20 11:38:25
 */
 <template>
   <div id='app'>
@@ -22,6 +22,8 @@
     <transition  :name="transitionName">
       <router-view v-if="!$route.meta.keepAlive" />
     </transition>
+    <!-- 全局loading -->
+    <loading v-if="loadingStatus"></loading>
   </div>
 </template>
 
@@ -30,7 +32,9 @@
     name: 'app',
     data() {
       return {
-        transitionName: 'slide-right'  // 默认动态路由变化为slide-right
+        transitionName: 'slide-right',  // 默认动态路由变化为slide-right
+        // 显示loading
+        loadingStatus:true
       }
     },
     created() {
@@ -38,6 +42,9 @@
     },
     methods: {
 
+    },
+    mounted(){
+      this.loadingStatus=false;
     },
     watch: {
       '$route'(to, from) {

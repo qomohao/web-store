@@ -2,7 +2,7 @@
  * @Author: wanghao 
  * @Date: 2020-03-27 15:26:06 
  * @Last Modified by: wanghao
- * @Last Modified time: 2020-04-03 15:38:39
+ * @Last Modified time: 2020-04-20 14:08:44
  */
 import Vue from 'vue';
 import App from './App.vue';
@@ -42,7 +42,7 @@ import router  from './router/index';
  * 引入vconsole,移动端控制台
  */
 import VConsole from 'vconsole'
-var vConsole = new VConsole();
+// var vConsole = new VConsole();
 
 /**
  * vuex

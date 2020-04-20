@@ -2,7 +2,7 @@
 * @Author: wanghao
 * @Date: 2020-03-30 18:03:26
  * @Last Modified by: wanghao
- * @Last Modified time: 2020-04-03 16:56:22
+ * @Last Modified time: 2020-04-20 16:15:14
 */
 <!-- 首页 -->
 <template>
@@ -16,7 +16,7 @@
                 </div>
             </div>
             <div class="icon flex justify-between align-center">
-                <div>
+                <div  @click="goToPage('goods-search')">
                     <van-icon name="search" />
                 </div>
                 <div @click="goToPage('message-center')">

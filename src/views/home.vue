@@ -2,7 +2,7 @@
 * @Author: wanghao
 * @Date: 2020-03-27 15:25:55
  * @Last Modified by: wanghao
- * @Last Modified time: 2020-04-03 17:14:23
+ * @Last Modified time: 2020-04-20 16:14:20
 */
 <!-- home -->
 <template>
@@ -10,12 +10,13 @@
         <div class="main">
             <router-view></router-view>
         </div>
-        <!-- 菜单项 -->
+        <!--  菜单项 -->
         <van-tabbar v-model="tabActiveIndex" @change="onChange">
-            <van-tabbar-item icon="home-o" v-for="(v,i) in tabList" :key="i" @click="goReplacePage(v.pathName)">
+            <van-tabbar-item  v-for="(v,i) in tabList" :key="i" @click="goReplacePage(v.pathName)">
                 <span>{{v.name}}</span>
                 <template #icon="props">
-                    <img :src="props.active ? v.activeIcon : v.unactiveIcon" />
+                    <!-- <img :src="props.active ? v.activeIcon : v.unactiveIcon" /> -->
+                     <i class="iconfont" :class=" v.unactiveIcon"></i>
                 </template>
             </van-tabbar-item>
         </van-tabbar>
@@ -33,31 +34,31 @@
                         pathName: "index",
                         name: "首页",
                         activeIcon: 'https://img.yzcdn.cn/vant/user-active.png',
-                        unactiveIcon: "https://img.yzcdn.cn/vant/user-inactive.png"
+                        unactiveIcon: "icon-fenleigongnengleimu"
                     },
                     {
                         pathName: "recommend",
                         name: "推荐",
                         activeIcon: 'https://img.yzcdn.cn/vant/user-active.png',
-                        unactiveIcon: "https://img.yzcdn.cn/vant/user-inactive.png"
+                        unactiveIcon: "icon-jingxuan2"
                     },
                     {
                         pathName: "market-category",
                         name: "品牌",
                         activeIcon: 'https://img.yzcdn.cn/vant/user-active.png',
-                        unactiveIcon: "https://img.yzcdn.cn/vant/user-inactive.png"
+                        unactiveIcon: "icon-pinpai1"
                     },
                     {
                         pathName: "shop-car",
                         name: "购物车",
                         activeIcon: 'https://img.yzcdn.cn/vant/user-active.png',
-                        unactiveIcon: "https://img.yzcdn.cn/vant/user-inactive.png"
+                        unactiveIcon: "icon-gouwuche1"
                     },
                     {
                         pathName: "mine",
                         name: "我的",
                         activeIcon: 'https://img.yzcdn.cn/vant/user-active.png',
-                        unactiveIcon: "https://img.yzcdn.cn/vant/user-inactive.png"
+                        unactiveIcon: "icon-shouye"
                     }
                 ],
                 isBack:this.$router.isBack
@@ -108,6 +109,16 @@
     .home {
         .main {
             padding-bottom: 60px;
+           
+        }
+        /deep/ .van-tabbar-item__icon{
+                color: #737373;
+                .iconfont{
+                    // i{
+                        font-size: 28px;
+                    // }
+                    font-weight: 400;
+                }
         }
     }
 </style>

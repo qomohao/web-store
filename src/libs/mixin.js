@@ -2,7 +2,7 @@
  * @Author: wanghao 
  * @Date: 2020-03-27 15:24:25 
  * @Last Modified by: wanghao
- * @Last Modified time: 2020-03-27 16:51:57
+ * @Last Modified time: 2020-04-20 16:14:02
  */
 
 // import Vue from "vue"
@@ -62,6 +62,18 @@ Vue.mixin({
      */
     goToPage(pathName, queryObj = {}, params = {}) {
       this.$router.push({
+        name: pathName,
+        query: queryObj,
+        params
+      });
+    },
+    /**
+     * 页面跳转
+     * @param { String } pathName 页面pathName
+     * @param { Object } queryObj 页面参数
+     */
+    goToReplace(pathName, queryObj = {}, params = {}) {
+      this.$router.replace({
         name: pathName,
         query: queryObj,
         params
